@@ -1,0 +1,26 @@
+# === Core ML / detection / depth ===
+ultralytics>=8.3.0
+transformers>=4.44.0
+accelerate>=0.33.0
+pillow>=10.0.0
+numpy>=1.26.0
+
+# === Video / image processing ===
+opencv-python>=4.9.0
+
+# === Wireless communication to ESP32 ===
+bleak>=0.22.0
+
+# === PyTorch ===
+# NOTE: torch/torchvision are intentionally NOT pinned to a plain version
+# here, because the correct install command depends on your GPU. Do NOT
+# just run "pip install -r requirements.txt" and expect GPU support -
+# install PyTorch SEPARATELY first using the command below, matching your
+# CUDA version (check with `nvidia-smi`, look at top-right for "CUDA Version"):
+#
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu130
+#
+# (cu130 was correct for this project's RTX 4050 setup - if a different
+# GPU/driver, get the matching command from https://pytorch.org/get-started/locally/)
+#
+# THEN run: pip install -r requirements.txt
